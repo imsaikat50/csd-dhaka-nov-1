@@ -26,10 +26,23 @@ class DB
         return self::$obj;
     }
 
+    private function __clone()
+    {
+        // TODO: Implement __clone() method.
+    }
+
+
+    private function __wakeup()
+    {
+        // TODO: Implement __wakeup() method.
+        throw new Exception("nothing to create from string");
+    }
+
 }
 
 $db1 = DB::getInstance();
 $db2 = DB::getInstance();
+
 
 var_dump($db1);
 var_dump($db2);
